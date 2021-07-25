@@ -2,7 +2,7 @@ const {Schema, model} = require('mongoose')
 
 const TokenSchema = new Schema({
     user: {type: Schema.Types.ObjectId, ref: "User"},
-    activationLink: {type: String, required: true}
+    refreshToken: {type: String, required: true}
 })
 
-module.exports = model('User', UserSchema)
+module.exports = model('Token', TokenSchema)
