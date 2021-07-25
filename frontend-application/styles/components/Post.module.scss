@@ -1,0 +1,9 @@
+.post {
+  width: 100%;
+  min-height: 200px;
+  background-color: var(--theme-el-color);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(20px);
+  margin: 10px;
+  color: #fff;
+}

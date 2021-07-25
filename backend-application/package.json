@@ -1,0 +1,22 @@
+{
+  "name": "backend-application",
+  "version": "1.0.0",
+  "description": "Gametips backend application ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js"
+  },
+  "keywords": [
+    "mern"
+  ],
+  "author": "Alexandr Soshnikov",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.6",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.3"
+  }
+}

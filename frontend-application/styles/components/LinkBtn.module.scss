@@ -1,0 +1,41 @@
+.LinkBtn {
+  padding: 15px 30px;
+  margin: 15px;
+  text-decoration: none;
+  color: var(--inactive-color);
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+
+  pointer-events: all;
+
+  &:hover {
+    color: var(--theme-color);
+  }
+
+  &:focus {
+    color: var(--theme-color);
+  }
+
+
+  &.isActive {
+    color: var(--theme-color);
+    border-bottom: 2px solid var(--theme-color);
+  }
+
+  &.isNotify {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      background-color: #3a6df0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      right: 20px;
+      top: 10px;
+    }
+  }
+}
+
+

@@ -1,0 +1,11 @@
+.info {
+  background-color: var(--theme-el-color);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(20px);
+  height: calc(100vh - 120px);
+  width: 100%;
+  top: 5rem;
+  margin-top: 10px;
+  color: #fff;
+  padding: 10px;
+}
