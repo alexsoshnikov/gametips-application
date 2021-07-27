@@ -10,7 +10,7 @@ export default function Feed() {
     return (
         <MainContainer title="Tipser | Actual game tips">
             <>
-                <FeedCategories/>
+                {/*<FeedCategories/>*/}
                 {arr.map((item, index) => {
                     return (
                         <Post key={index}>{item}</Post>

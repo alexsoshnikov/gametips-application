@@ -63,8 +63,8 @@ export const MainContainer = ({children, title, ...props}) => {
                             </ul>
                             <SearchField
                                 searchRef={searchRef}
-                                onFocusHandler={() => Router.push('/search')}
-                                onBlurHandler={() => Router.back()}
+                                // onFocusHandler={() => Router.push('/search')}
+                                // onBlurHandler={() => Router.back()}
                             />
                         </div>
                     </div>

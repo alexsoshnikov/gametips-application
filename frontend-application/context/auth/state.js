@@ -9,6 +9,7 @@ import {
     AUTH_LOGOUT
 } from "../types";
 import $api from "../../http/axios";
+import axios from "axios";
 
 export const AuthState = ({children}) => {
     const initialState = {
@@ -62,14 +63,27 @@ export const AuthState = ({children}) => {
     }
 
     const checkAuth = async () => {
-        //....
+        try {
+            const response = await axios.get(`${process.env.SERVER_URI}/auth/refresh`, {
+                withCredentials: true
+            })
+            localStorage.setItem('token', response.data.accessToken)
+            dispatch({
+                type: AUTH_SUCCESS,
+                payload: response.data.user
+            })
+
+        } catch (error) {
+            console.error("Check auth error: ", error.response?.data?.message)
+        }
+
     }
 
     const setLoading = () => dispatch({type: SET_LOADING})
 
     return (
         <AuthContext.Provider value={{
-           ...state, login, register, logout
+           ...state, login, register, logout, checkAuth
         }}>
             {children}
         </AuthContext.Provider>

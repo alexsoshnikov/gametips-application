@@ -6,8 +6,8 @@ export const SearchField = props => {
             <input
                 type="search"
                 placeholder="Search"
-                onFocus={props.onFocusHandler}
-                onBlur={props.onBlurHandler}
+                // onFocus={props.onFocusHandler}
+                // onBlur={props.onBlurHandler}
                 ref={props.searchRef}
             />
         </form>
