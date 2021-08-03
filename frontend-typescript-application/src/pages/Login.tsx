@@ -1,11 +1,13 @@
-import React, {useEffect, useState} from "react";
-import {Container, Form, Card, Button, Row, Col,} from "react-bootstrap";
+import React, {useState} from "react";
+import {Form, Button, Spinner} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
 import {FormGroup} from "../components/form-group/FormGroup";
 import {useDispatch, useSelector} from "react-redux";
 import { bindActionCreators } from 'redux';
 import {RootState} from "../states/reducers";
 import {authActionCreator} from '../states'
+import {SignCard} from "../components/posts/SignCard";
+import {Redirect} from "react-router-dom";
 
 export const Login: React.FC = () => {
     const state = useSelector((state: RootState) => state.auth)
@@ -24,48 +26,46 @@ export const Login: React.FC = () => {
         setValidated(true);
     }
 
-    useEffect(() => {
-        console.log(state)
-    }, [state]);
+    if (!state.isAuth && state.isLoading) {
+        return (
+            <SignCard>
+                <Spinner animation="border"/>
+            </SignCard>
+        )
+    }
 
+    if (state.isAuth) {
+        return <Redirect to="/"/>;
+    }
 
     return (
-        <Container>
-            <Row className="justify-content-md-center">
-                <Col xs lg="6">
-                    <Card className="bg-dark text-white">
-                        <Card.Body>
-                            <Card.Title>Sign In</Card.Title>
-                            <Form noValidate validated={validated} onSubmit={onSubmitHandler}>
-                                <FormGroup
-                                    required={true}
-                                    label="Email address"
-                                    name="email"
-                                    type="email"
-                                    placeholder="Enter email"
-                                    feedback="Please enter correct email address"
-                                    controlId="formGroupEmail"
-                                />
-                                <FormGroup
-                                    required={true}
-                                    label="Password"
-                                    name="password"
-                                    type="password"
-                                    placeholder="Enter password"
-                                    feedback="Please enter password"
-                                    controlId="formGroupPassword"
-                                />
-                                <Button type="submit">Sign In!</Button>
-                                <p className="mt-3">
-                                    If you don't have an account&nbsp;
-                                    <NavLink to="/auth/registration">Sign Up</NavLink>
-                                    &nbsp;now!
-                                </p>
-                            </Form>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
-        </Container>
+        <SignCard title="Sign In">
+            <Form noValidate validated={validated} onSubmit={onSubmitHandler}>
+                <FormGroup
+                    required={true}
+                    label="Email address"
+                    name="email"
+                    type="email"
+                    placeholder="Enter email"
+                    feedback="Please enter correct email address"
+                    controlId="formGroupEmail"
+                />
+                <FormGroup
+                    required={true}
+                    label="Password"
+                    name="password"
+                    type="password"
+                    placeholder="Enter password"
+                    feedback="Please enter password"
+                    controlId="formGroupPassword"
+                />
+                <Button type="submit">Sign In!</Button>
+                <p className="mt-3">
+                    If you don't have an account&nbsp;
+                    <NavLink to="/auth/registration">Sign Up</NavLink>
+                    &nbsp;now!
+                </p>
+            </Form>
+        </SignCard>
     )
 }

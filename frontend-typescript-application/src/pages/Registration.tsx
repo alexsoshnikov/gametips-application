@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import {Container, Form, Card, Button, Row, Col,} from "react-bootstrap";
+import {Form, Button} from "react-bootstrap";
 import {FormGroup} from "../components/form-group/FormGroup";
+import {SignCard} from "../components/posts/SignCard";
 
 
 export const Registration: React.FC = () => {
@@ -20,46 +21,37 @@ export const Registration: React.FC = () => {
     }
 
     return (
-        <Container>
-            <Row className="justify-content-md-center">
-                <Col xs lg="6">
-                    <Card className="bg-dark text-white">
-                        <Card.Body>
-                            <Card.Title>Sign Up</Card.Title>
-                            <Form noValidate validated={validated} onSubmit={onSubmitHandler}>
-                                <FormGroup
-                                    required={true}
-                                    label="Username"
-                                    name="username"
-                                    type="text"
-                                    placeholder="Enter username"
-                                    feedback="Please enter username"
-                                    controlId="formGroupUsername"
-                                />
-                                <FormGroup
-                                    required={true}
-                                    label="Email address"
-                                    name="email"
-                                    type="email"
-                                    placeholder="Enter email"
-                                    feedback="Please enter correct email address"
-                                    controlId="formGroupEmail"
-                                />
-                                <FormGroup
-                                    required={true}
-                                    label="Password"
-                                    name="password"
-                                    type="password"
-                                    placeholder="Enter password"
-                                    feedback="Please enter password"
-                                    controlId="formGroupPassword"
-                                />
-                                <Button type="submit">Sign Up!</Button>
-                            </Form>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
-        </Container>
+        <SignCard title="Sign Up">
+            <Form noValidate validated={validated} onSubmit={onSubmitHandler}>
+                <FormGroup
+                    required={true}
+                    label="Username"
+                    name="username"
+                    type="text"
+                    placeholder="Enter username"
+                    feedback="Please enter username"
+                    controlId="formGroupUsername"
+                />
+                <FormGroup
+                    required={true}
+                    label="Email address"
+                    name="email"
+                    type="email"
+                    placeholder="Enter email"
+                    feedback="Please enter correct email address"
+                    controlId="formGroupEmail"
+                />
+                <FormGroup
+                    required={true}
+                    label="Password"
+                    name="password"
+                    type="password"
+                    placeholder="Enter password"
+                    feedback="Please enter password"
+                    controlId="formGroupPassword"
+                />
+                <Button type="submit">Sign Up!</Button>
+            </Form>
+        </SignCard>
     )
 }

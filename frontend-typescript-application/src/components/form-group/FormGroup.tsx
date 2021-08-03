@@ -1,6 +1,6 @@
 import React from "react"
 import {Form, InputGroup} from "react-bootstrap"
-import {IFormGroup} from "../../models/IFormGroup";
+import {IFormGroup} from "../../models/components/IFormGroup";
 
 
 export const FormGroup: React.FC<IFormGroup> = props => (
