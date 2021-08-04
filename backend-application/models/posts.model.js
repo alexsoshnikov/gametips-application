@@ -6,7 +6,7 @@ const PostsSchema = new Schema({
     description: {type: String, trim: true},
     game: {type: Schema.Types.ObjectId, ref: "Game"},
     images: [{
-        filename: {type: String, unique: true},
+        filename: {type: String},
         contentType: {type: String},
         imageBase64: {type: String}
     }],
@@ -17,7 +17,10 @@ const PostsSchema = new Schema({
         createDate: {type: Schema.Types.Date, auto: true}
     }],
     likes: {type: Number, default: 0},
-    createdDate: {type: Schema.Types.Date, auto: true}
+    createdDate: {type: Schema.Types.Date, default: Date.now()},
+    status: {type: Number, default: 0}
 })
+
+//status 0 - pending, 1 - accepted, 2 - rejected
 
 module.exports = model('Posts', PostsSchema)
