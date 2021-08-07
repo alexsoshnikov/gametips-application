@@ -6,7 +6,7 @@ const PostsSchema = new Schema({
     description: {type: String, trim: true},
     game: {type: Schema.Types.ObjectId, ref: "Game"},
     images: [{
-        filename: {type: String},
+        filename: {type: String, default: null},
         contentType: {type: String},
         imageBase64: {type: String}
     }],
@@ -18,7 +18,11 @@ const PostsSchema = new Schema({
     }],
     likes: {type: Number, default: 0},
     createdDate: {type: Schema.Types.Date, default: Date.now()},
-    status: {type: Number, default: 0}
+    status: {type: Number, default: 0},
+    rejectReason: {
+        reasonMsg: {type: String, default: null},
+        reasonId: {type: Number}
+    }
 })
 
 //status 0 - pending, 1 - accepted, 2 - rejected

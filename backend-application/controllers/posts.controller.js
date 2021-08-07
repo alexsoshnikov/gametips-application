@@ -1,4 +1,3 @@
-const ApiError = require('../exceptions/api.error')
 const postsService = require("../services/posts.service")
 
 class PostsController {
@@ -13,7 +12,8 @@ class PostsController {
 
     async getPosts (req, res, next) {
         try {
-            //...
+            const postsData = await postsService.getAllPosts()
+            return res.json(postsData)
         } catch (error) {
             next(error)
         }
@@ -21,7 +21,8 @@ class PostsController {
 
     async getPostById (req, res, next) {
         try {
-            //...
+            const postsData = await postsService.getPostById(req.params.id)
+            return res.json(postsData)
         } catch (error) {
             next(error)
         }
@@ -29,7 +30,8 @@ class PostsController {
 
     async getPostsByUser (req, res, next) {
         try {
-            //...
+            const postsData = await postsService.getPostsByUser(req.params.userid)
+            return res.json(postsData)
         } catch (error) {
             next(error)
         }
