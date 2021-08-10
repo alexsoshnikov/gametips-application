@@ -1,0 +1,28 @@
+@import "../../../styles/mixins";
+
+
+.navigationLink {
+  list-style-type: none;
+  margin: 10px;
+  padding: 0;
+  display: inline-block;
+  transition: $default-transition;
+
+  a {
+    color: $color-text-primary;
+    opacity: 0.7;
+    padding: 10px 20px;
+
+    &:hover {
+      color: $color-text-primary;
+      opacity: 1;
+      transition: $default-transition;
+    }
+
+    &.active {
+      opacity: 1;
+      border-bottom: 2px solid rgb(255, 255, 255);
+      transition: $default-transition;
+    }
+  }
+}

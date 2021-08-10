@@ -1,0 +1,16 @@
+@import "variables";
+
+@mixin cardLayout($margin, $color: $elements_bg-color_primary) {
+  width: 100%;
+  padding: 10px;
+  margin: $margin;
+  background-color: $color;
+  border-radius: $default-border-radius;
+  box-shadow: $elements_bg-shadow;
+}
+
+@mixin primaryText($font, $weight: normal) {
+  color: $color-text-primary;
+  font-size: $font;
+  font-weight: $weight;
+}

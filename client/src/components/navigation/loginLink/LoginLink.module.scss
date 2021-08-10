@@ -1,0 +1,25 @@
+@import "src/styles/variables";
+
+.loginLink {
+  display: block;
+  padding: 8px 20px;
+  border-radius: $default-border-radius;
+  background-color: hsla(0, 0%, 100%, .1);
+  margin: 0 0 0 20px;
+  transition: $default-transition;
+
+  span {
+    color: $color-text-warning;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  &:hover {
+    transition:  hsla(0, 0%, 100%, .25);
+  }
+
+  &:active {
+    opacity: .4;
+    transition:  hsla(0, 0%, 100%, .4);
+  }
+}

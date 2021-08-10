@@ -1,0 +1,6 @@
+@import "src/styles/mixins";
+
+.aside {
+  @include cardLayout(10px);
+  height: 90vh;
+}

@@ -1,0 +1,6 @@
+export const AuthActionTypes = {
+    SET_LOADING: "SET_LOADING",
+    AUTH_SUCCESS: "AUTH_SUCCESS",
+    AUTH_ERROR: "AUTH_ERROR",
+    LOGOUT_SUCCESS: "LOGOUT_SUCCESS"
+}

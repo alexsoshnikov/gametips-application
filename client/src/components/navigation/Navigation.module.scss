@@ -1,0 +1,29 @@
+@import "src/styles/variables";
+
+.navigation {
+  background-color: $elements_bg-color_primary;
+  box-shadow: $elements_bg-shadow;
+  padding: 5px 0 0 0;
+
+  div:first-child {
+    justify-content: center;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+     div {
+       display: flex;
+     }
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+
+}
