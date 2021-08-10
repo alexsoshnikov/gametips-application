@@ -49,6 +49,7 @@ export const Login: React.FC = () => {
                     placeholder="Enter email"
                     feedback="Please enter correct email address"
                     controlId="formGroupEmail"
+                    hasValidation={true}
                 />
                 <FormGroup
                     required={true}
@@ -58,6 +59,7 @@ export const Login: React.FC = () => {
                     placeholder="Enter password"
                     feedback="Please enter password"
                     controlId="formGroupPassword"
+                    hasValidation={true}
                 />
                 <Button type="submit">Sign In!</Button>
                 <p className="mt-3">

@@ -31,6 +31,7 @@ export const Registration: React.FC = () => {
                     placeholder="Enter username"
                     feedback="Please enter username"
                     controlId="formGroupUsername"
+                    hasValidation={true}
                 />
                 <FormGroup
                     required={true}
@@ -40,6 +41,7 @@ export const Registration: React.FC = () => {
                     placeholder="Enter email"
                     feedback="Please enter correct email address"
                     controlId="formGroupEmail"
+                    hasValidation={true}
                 />
                 <FormGroup
                     required={true}
@@ -49,6 +51,7 @@ export const Registration: React.FC = () => {
                     placeholder="Enter password"
                     feedback="Please enter password"
                     controlId="formGroupPassword"
+                    hasValidation={true}
                 />
                 <Button type="submit">Sign Up!</Button>
             </Form>

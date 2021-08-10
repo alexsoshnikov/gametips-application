@@ -72,10 +72,6 @@ class UserService {
         return users
     }
 
-    async verifyUserById(userid) {
-        const user = await UserModel.findById(userid)
-        return user
-    }
     async _authUser(user) {
         const userDto = new UserDto(user)
         const tokens = tokenService.generateTokens({...userDto})

@@ -1,19 +1,14 @@
 const PostModel = require("../models/posts.model")
 const ApiError = require("../exceptions/api.error")
 const PostDto = require("../dtos/posts.dto")
-const userService = require("./user.service")
 const python = require("../python/python")
 const fetch = require("node-fetch")
+const multer = require("multer")
 
 class PostsService {
     async create(postData) {
         // todo: тут должно быть овер дохуя проверок, но пока так
-
         if (!postData.title) throw ApiError.BadRequest('Post must be titled')
-
-        const isVerify = await userService.verifyUserById(postData.userid)
-        if (!isVerify) throw ApiError.BadRequest('User with such id was not found')
-
         // simple detection of bad words
         // const response = await fetch('http://www.wdylike.appspot.com/?q=shit')
         // console.log(response)
@@ -24,14 +19,22 @@ class PostsService {
             videoURLs: postData.videoURLs,
             creator: postData.userid
         })
+        //https://www.youtube.com/watch?v=l8aGNhOD91k&t=3520s
+        //https://www.bezkoder.com/node-js-upload-store-images-mongodb/
+        return new PostDto(post)
+    }
 
-
+    async update(postData) {
+        if (!postData.title) throw ApiError.BadRequest('Post must be titled')
+        // todo: тут должно быть овер дохуя проверок, но пока так
+        // options new: true - возвращается обновленный объект, а не старый и после обновляет
+        const post = await PostModel.findByIdAndUpdate(postData.id, postData, {new: true})
         return new PostDto(post)
     }
 
     async getAllPosts() {
         // todo: have to be paginated
-        const posts = await PostModel.find()
+        const posts = await PostModel.find({status: 1})
         return posts.map(post => new PostDto(post))
     }
 

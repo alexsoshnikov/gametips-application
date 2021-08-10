@@ -6,7 +6,7 @@ import {IFormGroup} from "../../models/components/IFormGroup";
 export const FormGroup: React.FC<IFormGroup> = props => (
     <Form.Group className="mb-3" controlId={props.controlId}>
         <Form.Label>{props.label}</Form.Label>
-        <InputGroup hasValidation>
+        <InputGroup hasValidation={props.hasValidation}>
             <Form.Control
                 required={props.required}
                 name={props.name}

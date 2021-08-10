@@ -10,6 +10,15 @@ class PostsController {
         }
     }
 
+    async update (req, res, next) {
+        try {
+            const postData = await postsService.update(req.body)
+            return res.json(postData)
+        } catch (error) {
+            next(error)
+        }
+    }
+
     async getPosts (req, res, next) {
         try {
             const postsData = await postsService.getAllPosts()

@@ -20,7 +20,7 @@ const PostsSchema = new Schema({
     createdDate: {type: Schema.Types.Date, default: Date.now()},
     status: {type: Number, default: 0},
     rejectReason: {
-        reasonMsg: {type: String, default: null},
+        reasonMsg: {type: String},
         reasonId: {type: Number}
     }
 })

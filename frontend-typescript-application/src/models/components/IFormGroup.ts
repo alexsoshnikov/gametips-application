@@ -5,5 +5,6 @@ export interface IFormGroup {
     controlId: string,
     required: boolean,
     placeholder: string,
-    feedback: string
+    feedback: string,
+    hasValidation: boolean
 }

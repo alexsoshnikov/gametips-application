@@ -4,6 +4,7 @@ const postsController = require('../controllers/posts.controller')
 const authMiddleware = require('../middlewares/auth.middleware')
 
 router.post('/create', authMiddleware, postsController.create)
+router.put('/update', authMiddleware, postsController.update)
 router.get('/posts', postsController.getPosts)
 router.get('/post/:id', postsController.getPostById)
 router.get('/posts/:userid', postsController.getPostsByUser)
