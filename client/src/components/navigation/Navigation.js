@@ -1,9 +1,7 @@
 import React from "react";
-import {Container, Nav, Navbar} from "react-bootstrap";
+import {Container, Navbar} from "react-bootstrap";
 import classes from "./Navigation.module.scss";
 import {NavigationLink} from "./navigationLink/NavigationLink";
-import {NavigationNotification} from "./navigationNotification/NavigationNotification";
-import {LoginLink} from "./loginLink/LoginLink";
 
 export const Navigation = () => {
     return (
@@ -19,7 +17,7 @@ export const Navigation = () => {
                     </ul>
                     <div>
                         {/*<NavigationNotification/>*/}
-                        <LoginLink/>
+                        <NavigationLink title="Sign In" to="/auth/login"/>
                     </div>
                 </div>
             </Container>

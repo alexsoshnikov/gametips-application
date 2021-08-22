@@ -1,3 +1,19 @@
-.button {
+@import "src/styles/variables";
 
+.button {
+  color: $main-color-btn;
+  background: none;
+  border: 2px solid $main-color-btn;
+  border-radius: $default-border-radius;
+  font: inherit;
+  line-height: 1;
+  padding: .5em 1em;
+  transition: 0.25s;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em adjust-hue($main-color-btn, 45deg);
+    transform: translateY(-0.25em);
+  }
 }
+

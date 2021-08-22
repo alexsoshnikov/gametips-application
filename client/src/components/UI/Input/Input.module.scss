@@ -1,15 +1,18 @@
 @import "src/styles/variables";
-
+@import "src/styles/mixins";
 
 .input {
+  margin: 5px;
   input {
     padding: 5px 10px;
     margin: 0;
     background-color: hsla(0, 0%, 100%, .1);
     border-radius: $default-border-radius;
-
-    &:focus {
-      background-color: hsla(0, 0%, 100%, .25);
-    }
+    border: none;
+    box-shadow: $elements_bg-shadow;
+    line-height: 2em;
+    outline: none;
+    width: 100%;
+    @include primaryText(18px)
   }
 }
